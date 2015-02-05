@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F8885151A8408F200025AFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8885141A8408F200025AFC /* main.m */; };
+		1F8885181A8408F200025AFC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8885171A8408F200025AFC /* AppDelegate.m */; };
+		1F88851B1A8408F200025AFC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F88851A1A8408F200025AFC /* ViewController.m */; };
+		1F8885201A8408F300025AFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F88851F1A8408F300025AFC /* Images.xcassets */; };
+		1F8885231A8408F300025AFC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8885211A8408F300025AFC /* LaunchScreen.xib */; };
+		1F88852F1A8408F300025AFC /* FCImageTiledViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F88852E1A8408F300025AFC /* FCImageTiledViewTests.m */; };
+		1F8885391A840A1D00025AFC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8885381A840A1D00025AFC /* ViewController.xib */; };
+		1F88853C1A840A8700025AFC /* MyCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F88853B1A840A8700025AFC /* MyCustomView.m */; };
+		1F88853E1A8416DA00025AFC /* icoTc_amex.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F88853D1A8416DA00025AFC /* icoTc_amex.png */; };
+		1F8885401A8416DF00025AFC /* icoTc_banelco.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F88853F1A8416DF00025AFC /* icoTc_banelco.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F8885291A8408F300025AFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F8885071A8408F200025AFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F88850E1A8408F200025AFC;
+			remoteInfo = FCImageTiledView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F88850F1A8408F200025AFC /* FCImageTiledView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCImageTiledView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F8885131A8408F200025AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F8885141A8408F200025AFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F8885161A8408F200025AFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1F8885171A8408F200025AFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1F8885191A8408F200025AFC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1F88851A1A8408F200025AFC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1F88851F1A8408F300025AFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1F8885221A8408F300025AFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1F8885281A8408F300025AFC /* FCImageTiledViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FCImageTiledViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F88852D1A8408F300025AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F88852E1A8408F300025AFC /* FCImageTiledViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCImageTiledViewTests.m; sourceTree = "<group>"; };
+		1F8885381A840A1D00025AFC /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		1F88853A1A840A8700025AFC /* MyCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomView.h; sourceTree = "<group>"; };
+		1F88853B1A840A8700025AFC /* MyCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomView.m; sourceTree = "<group>"; };
+		1F88853D1A8416DA00025AFC /* icoTc_amex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoTc_amex.png; sourceTree = "<group>"; };
+		1F88853F1A8416DF00025AFC /* icoTc_banelco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoTc_banelco.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F88850C1A8408F200025AFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F8885251A8408F300025AFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F8885061A8408F200025AFC = {
+			isa = PBXGroup;
+			children = (
+				1F8885111A8408F200025AFC /* FCImageTiledView */,
+				1F88852B1A8408F300025AFC /* FCImageTiledViewTests */,
+				1F8885101A8408F200025AFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F8885101A8408F200025AFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F88850F1A8408F200025AFC /* FCImageTiledView.app */,
+				1F8885281A8408F300025AFC /* FCImageTiledViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F8885111A8408F200025AFC /* FCImageTiledView */ = {
+			isa = PBXGroup;
+			children = (
+				1F88853F1A8416DF00025AFC /* icoTc_banelco.png */,
+				1F88853D1A8416DA00025AFC /* icoTc_amex.png */,
+				1F8885161A8408F200025AFC /* AppDelegate.h */,
+				1F8885171A8408F200025AFC /* AppDelegate.m */,
+				1F8885191A8408F200025AFC /* ViewController.h */,
+				1F88851A1A8408F200025AFC /* ViewController.m */,
+				1F8885381A840A1D00025AFC /* ViewController.xib */,
+				1F88851F1A8408F300025AFC /* Images.xcassets */,
+				1F8885211A8408F300025AFC /* LaunchScreen.xib */,
+				1F8885121A8408F200025AFC /* Supporting Files */,
+				1F88853A1A840A8700025AFC /* MyCustomView.h */,
+				1F88853B1A840A8700025AFC /* MyCustomView.m */,
+			);
+			path = FCImageTiledView;
+			sourceTree = "<group>";
+		};
+		1F8885121A8408F200025AFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F8885131A8408F200025AFC /* Info.plist */,
+				1F8885141A8408F200025AFC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F88852B1A8408F300025AFC /* FCImageTiledViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F88852E1A8408F300025AFC /* FCImageTiledViewTests.m */,
+				1F88852C1A8408F300025AFC /* Supporting Files */,
+			);
+			path = FCImageTiledViewTests;
+			sourceTree = "<group>";
+		};
+		1F88852C1A8408F300025AFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F88852D1A8408F300025AFC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F88850E1A8408F200025AFC /* FCImageTiledView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F8885321A8408F300025AFC /* Build configuration list for PBXNativeTarget "FCImageTiledView" */;
+			buildPhases = (
+				1F88850B1A8408F200025AFC /* Sources */,
+				1F88850C1A8408F200025AFC /* Frameworks */,
+				1F88850D1A8408F200025AFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FCImageTiledView;
+			productName = FCImageTiledView;
+			productReference = 1F88850F1A8408F200025AFC /* FCImageTiledView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F8885271A8408F300025AFC /* FCImageTiledViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F8885351A8408F300025AFC /* Build configuration list for PBXNativeTarget "FCImageTiledViewTests" */;
+			buildPhases = (
+				1F8885241A8408F300025AFC /* Sources */,
+				1F8885251A8408F300025AFC /* Frameworks */,
+				1F8885261A8408F300025AFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F88852A1A8408F300025AFC /* PBXTargetDependency */,
+			);
+			name = FCImageTiledViewTests;
+			productName = FCImageTiledViewTests;
+			productReference = 1F8885281A8408F300025AFC /* FCImageTiledViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F8885071A8408F200025AFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Fabián Celdeiro";
+				TargetAttributes = {
+					1F88850E1A8408F200025AFC = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					1F8885271A8408F300025AFC = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 1F88850E1A8408F200025AFC;
+					};
+				};
+			};
+			buildConfigurationList = 1F88850A1A8408F200025AFC /* Build configuration list for PBXProject "FCImageTiledView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F8885061A8408F200025AFC;
+			productRefGroup = 1F8885101A8408F200025AFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F88850E1A8408F200025AFC /* FCImageTiledView */,
+				1F8885271A8408F300025AFC /* FCImageTiledViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F88850D1A8408F200025AFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8885231A8408F300025AFC /* LaunchScreen.xib in Resources */,
+				1F8885401A8416DF00025AFC /* icoTc_banelco.png in Resources */,
+				1F88853E1A8416DA00025AFC /* icoTc_amex.png in Resources */,
+				1F8885391A840A1D00025AFC /* ViewController.xib in Resources */,
+				1F8885201A8408F300025AFC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F8885261A8408F300025AFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F88850B1A8408F200025AFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F88851B1A8408F200025AFC /* ViewController.m in Sources */,
+				1F88853C1A840A8700025AFC /* MyCustomView.m in Sources */,
+				1F8885181A8408F200025AFC /* AppDelegate.m in Sources */,
+				1F8885151A8408F200025AFC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F8885241A8408F300025AFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F88852F1A8408F300025AFC /* FCImageTiledViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F88852A1A8408F300025AFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F88850E1A8408F200025AFC /* FCImageTiledView */;
+			targetProxy = 1F8885291A8408F300025AFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F8885211A8408F300025AFC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F8885221A8408F300025AFC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F8885301A8408F300025AFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1F8885311A8408F300025AFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F8885331A8408F300025AFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FCImageTiledView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1F8885341A8408F300025AFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FCImageTiledView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1F8885361A8408F300025AFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FCImageTiledViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FCImageTiledView.app/FCImageTiledView";
+			};
+			name = Debug;
+		};
+		1F8885371A8408F300025AFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FCImageTiledViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FCImageTiledView.app/FCImageTiledView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F88850A1A8408F200025AFC /* Build configuration list for PBXProject "FCImageTiledView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8885301A8408F300025AFC /* Debug */,
+				1F8885311A8408F300025AFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F8885321A8408F300025AFC /* Build configuration list for PBXNativeTarget "FCImageTiledView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8885331A8408F300025AFC /* Debug */,
+				1F8885341A8408F300025AFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1F8885351A8408F300025AFC /* Build configuration list for PBXNativeTarget "FCImageTiledViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8885361A8408F300025AFC /* Debug */,
+				1F8885371A8408F300025AFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F8885071A8408F200025AFC /* Project object */;
+}
