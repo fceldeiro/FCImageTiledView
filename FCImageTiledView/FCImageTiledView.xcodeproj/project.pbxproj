@@ -17,6 +17,9 @@
 		1F88853C1A840A8700025AFC /* MyCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F88853B1A840A8700025AFC /* MyCustomView.m */; };
 		1F88853E1A8416DA00025AFC /* icoTc_amex.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F88853D1A8416DA00025AFC /* icoTc_amex.png */; };
 		1F8885401A8416DF00025AFC /* icoTc_banelco.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F88853F1A8416DF00025AFC /* icoTc_banelco.png */; };
+		1F8885421A845DED00025AFC /* icoTc_bank_transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8885411A845DED00025AFC /* icoTc_bank_transfer.png */; };
+		1F8885441A845DF700025AFC /* icoTc_debmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8885431A845DF700025AFC /* icoTc_debmaster.png */; };
+		1F8885461A845DFE00025AFC /* icoTc_melicard.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8885451A845DFE00025AFC /* icoTc_melicard.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		1F88853B1A840A8700025AFC /* MyCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomView.m; sourceTree = "<group>"; };
 		1F88853D1A8416DA00025AFC /* icoTc_amex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoTc_amex.png; sourceTree = "<group>"; };
 		1F88853F1A8416DF00025AFC /* icoTc_banelco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoTc_banelco.png; sourceTree = "<group>"; };
+		1F8885411A845DED00025AFC /* icoTc_bank_transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoTc_bank_transfer.png; sourceTree = "<group>"; };
+		1F8885431A845DF700025AFC /* icoTc_debmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoTc_debmaster.png; sourceTree = "<group>"; };
+		1F8885451A845DFE00025AFC /* icoTc_melicard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoTc_melicard.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,9 @@
 		1F8885111A8408F200025AFC /* FCImageTiledView */ = {
 			isa = PBXGroup;
 			children = (
+				1F8885451A845DFE00025AFC /* icoTc_melicard.png */,
+				1F8885431A845DF700025AFC /* icoTc_debmaster.png */,
+				1F8885411A845DED00025AFC /* icoTc_bank_transfer.png */,
 				1F88853F1A8416DF00025AFC /* icoTc_banelco.png */,
 				1F88853D1A8416DA00025AFC /* icoTc_amex.png */,
 				1F8885161A8408F200025AFC /* AppDelegate.h */,
@@ -210,11 +219,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8885441A845DF700025AFC /* icoTc_debmaster.png in Resources */,
 				1F8885231A8408F300025AFC /* LaunchScreen.xib in Resources */,
 				1F8885401A8416DF00025AFC /* icoTc_banelco.png in Resources */,
 				1F88853E1A8416DA00025AFC /* icoTc_amex.png in Resources */,
 				1F8885391A840A1D00025AFC /* ViewController.xib in Resources */,
 				1F8885201A8408F300025AFC /* Images.xcassets in Resources */,
+				1F8885421A845DED00025AFC /* icoTc_bank_transfer.png in Resources */,
+				1F8885461A845DFE00025AFC /* icoTc_melicard.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

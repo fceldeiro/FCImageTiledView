@@ -10,38 +10,20 @@
 
 
 @interface MyCustomView()
-@property (nonatomic,strong) NSArray  * images;
 @end
 
 @implementation MyCustomView
 
 
--(id) initWithFrame:(CGRect)frame{
-    if (self =[super initWithFrame:frame]){
-                self.backgroundColor = [UIColor redColor];
+-(void) initializeViews{
+    
+    self.autoresizingMask = UIViewAutoresizingNone;
+    
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    for (UIView * view in self.subviews){
+        [view removeFromSuperview];
     }
-    
-    return self;
-}
--(void) awakeFromNib{
-    
-    
-    NSLog(@"Im awake");
-    self.backgroundColor = [UIColor redColor];
-}
-
-
--(void) prepareForInterfaceBuilder{
-    
-  
-    
-}
--(void) layoutSubviews{
-    [super layoutSubviews];
-    
-    
-    static const CGFloat spacing = 5.0f;
-    
     
     NSBundle * mainBundle = nil;
     
@@ -51,67 +33,136 @@
     mainBundle = [NSBundle bundleForClass:[self class]];
 #endif
     
-    NSMutableArray * manyImages = [NSMutableArray arrayWithCapacity:10];
-    for (int i = 0 ;i<10; i++){
-        
-        NSString * filenameA = [mainBundle pathForResource:@"icoTc_banelco" ofType:@"png"];
-        NSString * filenameB = [mainBundle pathForResource:@"icoTc_amex" ofType:@"png"];
-
-        
-        if (i%2){
-            [manyImages addObject:[UIImage imageWithContentsOfFile:filenameA]];
-        }
-        else{
-            [manyImages addObject:[UIImage imageWithContentsOfFile:filenameB]];
-        }
-    }
-    self.images = [NSArray arrayWithArray:manyImages];
     
-    UIImageView * previousImageView = nil;
-    for ( int i = 0 ; i<self.images.count ; i++){
+    NSArray  *filenames = @[
+                            [mainBundle pathForResource:@"icoTc_banelco" ofType:@"png"],
+                            [mainBundle pathForResource:@"icoTc_amex" ofType:@"png"],
+                            [mainBundle pathForResource:@"icoTc_melicard" ofType:@"png"],
+                            [mainBundle pathForResource:@"icoTc_debmaster" ofType:@"png"],
+                            [mainBundle pathForResource:@"icoTc_bank_transfer" ofType:@"png"]];
+
+    
+    for (int i = 0 ;i<20; i++){
         
-        UIImageView * newImageView = [[UIImageView alloc]initWithImage:self.images[i]];
-        [newImageView setFrame:CGRectMake(spacing, spacing, newImageView.frame.size.width, newImageView.frame.size.height)];
+        NSString* filenameToUse = nil;
         
-      
-        if (previousImageView){
-            [newImageView setFrame:CGRectMake(previousImageView.frame.origin.x + spacing + previousImageView.frame.size.width, previousImageView.frame.origin.y, newImageView.frame.size.width, newImageView.frame.size.height)];
+        NSInteger filenumber = i%5;
+        filenameToUse = filenames[filenumber];
+    
+        [self addSubview:[[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:filenameToUse]]];
+    }
+    
+}
+-(id) initWithFrame:(CGRect)frame{
+    if (self =[super initWithFrame:frame]){
+                self.backgroundColor = [UIColor redColor];
+        [self initializeViews];
+    }
+    
+    return self;
+}
+-(void) awakeFromNib{
+    
+    
+    self.backgroundColor = [UIColor redColor];
+    [self initializeViews];
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+
+}
+
+
+-(void) layoutOneLineIntrinsicWidth{
+    
+    static const CGFloat spacing = 5.0f;
+    
+    
+    UIView * previousImageView = nil;
+    for ( int i = 0 ; i<self.subviews.count ; i++){
+        
+        UIView * currentImage = self.subviews[i];
+        
+        CGPoint nextPosition = CGPointMake(previousImageView.frame.origin.x + spacing + previousImageView.frame.size.width, spacing);
+        
+        [currentImage setFrame:CGRectMake(nextPosition.x, nextPosition.y, currentImage.frame.size.width, currentImage.frame.size.height)];
+        
+        previousImageView = currentImage;
+        
+    }
+    
+    [self invalidateIntrinsicContentSize];
+    
+}
+
+-(void) layoutMultineInstrinsicHeight{
+    
+    static const CGFloat spacing = 5.0f;
+    
+    CGFloat maxHeightForRow = spacing;
+    CGFloat currentYPosition = spacing;
+    
+    UIView * previousImageView = nil;
+    for ( int i = 0 ; i<self.subviews.count ; i++){
+        
+        UIView * currentImage = self.subviews[i];
+        
+        CGPoint nextPosition = CGPointMake(previousImageView.frame.origin.x + spacing + previousImageView.frame.size.width, currentYPosition);
+        
+        if (currentImage.frame.size.height  > maxHeightForRow){
+            maxHeightForRow = currentImage.frame.size.height;
+
         }
-        previousImageView = newImageView;
-        [self addSubview:newImageView];
+        
+        //Me pase
+        if (nextPosition.x + currentImage.frame.size.width > self.frame.size.width + spacing ){
+
+            maxHeightForRow = currentImage.frame.size.height;
+            currentYPosition = previousImageView.frame.origin.y + maxHeightForRow + spacing;
+            nextPosition = CGPointMake(spacing, currentYPosition);
+        }
+       
+        [currentImage setFrame:CGRectMake(nextPosition.x, nextPosition.y, currentImage.frame.size.width, currentImage.frame.size.height)];
+    
+     previousImageView = currentImage;
+
     }
     
     self.backgroundColor = [UIColor clearColor];
-//    self.layer.backgroundColor = [UIColor redColor].CGColor;
     
-  
+    [self invalidateIntrinsicContentSize];
+
 }
 
--(CGSize) intrinsicContentSize{
+-(void) layoutSubviews{
+    [super layoutSubviews];
     
+    [self layoutMultineInstrinsicHeight];
+   
+}
 
+
+- (CGSize) intrinsicContentSizeMultipleLines{
+    
     UIView * lastObject = [self.subviews lastObject];
-    CGFloat width =  lastObject.frame.origin.x + lastObject.frame.size.width + 5;
+    // CGFloat width =  lastObject.frame.origin.x + lastObject.frame.size.width + 5;
     CGFloat height = lastObject.frame.origin.y + lastObject.frame.size.height + 5;
     
-    return CGSizeMake(width, height);
-    
-//    CGSize sizeToReturn = [self systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-//    return sizeToReturn;
+    return CGSizeMake(UIViewNoIntrinsicMetric, height);
+
 }
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-//- (void)drawRect:(CGRect)rect {
-//    // Drawing code
-//    
-//    self.layer.backgroundColor = [UIColor redColor].CGColor;
-//    
-//    CGContextRef ctx = UIGraphicsGetCurrentContext();
-//    CGContextAddEllipseInRect(ctx, rect);
-//    CGContextSetFillColor(ctx, CGColorGetComponents([[UIColor blueColor] CGColor]));
-//    CGContextFillPath(ctx);
-//
-//}
+
+-(CGSize) intrinsicContentSizeOneLine{
+    UIView * lastObject = [self.subviews lastObject];
+     CGFloat width =  lastObject.frame.origin.x + lastObject.frame.size.width + 5;
+    
+    return CGSizeMake(width, UIViewNoIntrinsicMetric);
+
+}
+-(CGSize) intrinsicContentSize{
+    
+    return [self intrinsicContentSizeMultipleLines];
+    
+}
+
 
 
 @end
