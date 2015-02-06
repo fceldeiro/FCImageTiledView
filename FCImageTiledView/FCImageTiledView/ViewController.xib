@@ -11,26 +11,20 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Uj-Qu-8LW" customClass="MyCustomView">
-                    <rect key="frame" x="5" y="30" width="310" height="82"/>
+                    <rect key="frame" x="10" y="30" width="580" height="183"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="9Uj-Qu-8LW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="52p-az-ohF"/>
-                <constraint firstAttribute="trailing" secondItem="9Uj-Qu-8LW" secondAttribute="trailing" constant="5" id="HI6-1H-CPF"/>
-                <constraint firstAttribute="centerX" secondItem="9Uj-Qu-8LW" secondAttribute="centerX" id="gTU-4t-1vA"/>
-                <constraint firstItem="9Uj-Qu-8LW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="sgJ-GG-8xL"/>
+                <constraint firstItem="9Uj-Qu-8LW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="WF6-uM-269"/>
+                <constraint firstAttribute="trailing" secondItem="9Uj-Qu-8LW" secondAttribute="trailing" constant="10" id="bsq-XV-yiv"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="gTU-4t-1vA"/>
-                </mask>
-            </variation>
+            <point key="canvasLocation" x="149.5" y="154.5"/>
         </view>
     </objects>
 </document>

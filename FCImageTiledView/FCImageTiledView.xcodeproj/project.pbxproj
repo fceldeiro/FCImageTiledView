@@ -94,11 +94,7 @@
 		1F8885111A8408F200025AFC /* FCImageTiledView */ = {
 			isa = PBXGroup;
 			children = (
-				1F8885451A845DFE00025AFC /* icoTc_melicard.png */,
-				1F8885431A845DF700025AFC /* icoTc_debmaster.png */,
-				1F8885411A845DED00025AFC /* icoTc_bank_transfer.png */,
-				1F88853F1A8416DF00025AFC /* icoTc_banelco.png */,
-				1F88853D1A8416DA00025AFC /* icoTc_amex.png */,
+				1F8885471A8466BB00025AFC /* testimages */,
 				1F8885161A8408F200025AFC /* AppDelegate.h */,
 				1F8885171A8408F200025AFC /* AppDelegate.m */,
 				1F8885191A8408F200025AFC /* ViewController.h */,
@@ -137,6 +133,18 @@
 				1F88852D1A8408F300025AFC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F8885471A8466BB00025AFC /* testimages */ = {
+			isa = PBXGroup;
+			children = (
+				1F8885451A845DFE00025AFC /* icoTc_melicard.png */,
+				1F8885431A845DF700025AFC /* icoTc_debmaster.png */,
+				1F8885411A845DED00025AFC /* icoTc_bank_transfer.png */,
+				1F88853F1A8416DF00025AFC /* icoTc_banelco.png */,
+				1F88853D1A8416DA00025AFC /* icoTc_amex.png */,
+			);
+			name = testimages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +372,7 @@
 				INFOPLIST_FILE = FCImageTiledView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -374,6 +383,7 @@
 				INFOPLIST_FILE = FCImageTiledView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
