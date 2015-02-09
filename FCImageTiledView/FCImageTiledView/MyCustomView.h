@@ -11,4 +11,7 @@
 IB_DESIGNABLE
 @interface MyCustomView : UIView
 
+@property (nonatomic) IBInspectable CGFloat spacingX;
+
+-(void) setImages:(NSArray*) images animated:(BOOL) animated;
 @end
