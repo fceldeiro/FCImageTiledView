@@ -10,6 +10,9 @@
 
 
 @interface MyCustomView()
+@property (nonatomic) BOOL animated;
+
+@property (nonatomic) BOOL animationsFinished;
 @end
 
 @implementation MyCustomView
@@ -79,12 +82,17 @@
         [view removeFromSuperview];
     }
     
+
     
     for (int i = 0 ;i<images.count; i++){
         
         [self addSubview:[[UIImageView alloc] initWithImage:images[i]]];
     }
     
+    NSLog(@"Setting images");
+    
+    self.animated = animated;
+    self.animationsFinished = NO;
     
     [self layoutMultineInstrinsicHeight:animated];
   
@@ -117,7 +125,7 @@
 -(void) setSpacingX:(CGFloat)spacingX{
     
     _spacingX = spacingX;
-    [self layoutMultineInstrinsicHeight:NO];
+ //   [self layoutMultineInstrinsicHeight:NO];
 //    [self setNeedsLayout];
 }
 
@@ -125,6 +133,7 @@
     
     
 
+    NSLog(@"Layout multile %@",animated ? @"ANIMATED":@"NOT_ANIMATED");
     self.clipsToBounds = YES;
     static CGFloat internalSpacingX = 5.0f;
     internalSpacingX = self.spacingX;
@@ -135,6 +144,10 @@
     CGFloat currentYPosition = 0;
     
     UIView * previousImageView = nil;
+    
+    __block CGFloat totalDuration = 0;
+    __block NSInteger animationsFinished = 0;
+    
     for ( int i = 0 ; i<self.subviews.count ; i++){
         
         UIView * currentImage = self.subviews[i];
@@ -158,40 +171,39 @@
             nextPosition = CGPointMake(0, currentYPosition);
         }
         
-        self.layer.opacity = 1;
-       
+        CGFloat animationDuration = 0.100;
         
-        [currentImage setFrame:CGRectMake(nextPosition.x, nextPosition.y, currentImage.frame.size.width, currentImage.frame.size.height)];
+        CGPoint offcontainerPosition = CGPointMake(self.frame.size.width + currentImage.frame.size.width,nextPosition.y);
+        
+        [currentImage setFrame:CGRectMake(offcontainerPosition.x, nextPosition.y, currentImage.frame.size.width, currentImage.frame.size.height)];
+        
+        
+        if (animated && !self.animationsFinished){
+            
+            
+
+            [UIView animateWithDuration:animationDuration delay:totalDuration usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                
+                [currentImage setFrame:CGRectMake(nextPosition.x, nextPosition.y, currentImage.frame.size.width, currentImage.frame.size.height)];
+
+            
+            } completion:^(BOOL finished) {
+                animationsFinished++;
+                if (animationsFinished == self.subviews.count){
+                    self.animationsFinished = YES;
+                }
+            }];
+        
+            totalDuration+=animationDuration;
+        }
+        else{
+            [currentImage.layer removeAllAnimations];
+             [currentImage setFrame:CGRectMake(nextPosition.x, nextPosition.y, currentImage.frame.size.width, currentImage.frame.size.height)];
+            
+        }
       
         
-        
-        if (animated){
-            [UIView animateWithDuration:1.0 animations:^{
-            
-                CABasicAnimation *animationX = [CABasicAnimation animation];
-                animationX.keyPath = @"position.x";
-                animationX.fromValue = @(self.frame.size.width - currentImage.frame.size.width);
-                animationX.toValue = @(nextPosition.x);
-                animationX.duration = 0.5;
-                animationX.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-                
-            
-                CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
-                fadeAnim.fromValue = [NSNumber numberWithFloat:0.0];
-                fadeAnim.toValue = [NSNumber numberWithFloat:1.0];
-                fadeAnim.duration = 1.0;
-                fadeAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-            
-                [currentImage.layer addAnimation:animationX forKey:@"basic"];
-                [currentImage.layer addAnimation:fadeAnim forKey:@"opacity"];
-            }];
-        }
-
-        
-
-      //  animationX.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        
-        
+  
         
       
     
@@ -208,9 +220,10 @@
 -(void) layoutSubviews{
     [super layoutSubviews];
     
-    
+
+    NSLog(@"Layout subviews");
    // [UIView animateWithDuration:1.0 animations:^{
-    [self layoutMultineInstrinsicHeight:NO];
+    [self layoutMultineInstrinsicHeight:self.animated];
   //  }];
 
    

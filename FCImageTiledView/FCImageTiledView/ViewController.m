@@ -40,7 +40,7 @@
         
         NSMutableArray * images = [NSMutableArray arrayWithCapacity:120];
         
-        for (int i = 0 ;i<10; i++){
+        for (int i = 0 ;i<125; i++){
             
             NSString* filenameToUse = nil;
             
