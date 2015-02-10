@@ -13,12 +13,17 @@
 @property (nonatomic) BOOL animated;
 
 @property (nonatomic) BOOL animationsFinished;
+
+@property (nonatomic,strong) UIDynamicAnimator * dynamicAnimator;
 @end
 
 @implementation MyCustomView
 
 
 -(void) initializeViews{
+    
+    
+    self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
     
     self.autoresizingMask = UIViewAutoresizingNone;
     
@@ -89,6 +94,9 @@
         [self addSubview:[[UIImageView alloc] initWithImage:images[i]]];
     }
     
+    
+  
+    
     NSLog(@"Setting images");
     
     self.animated = animated;
@@ -96,6 +104,33 @@
     
     [self layoutMultineInstrinsicHeight:animated];
   
+
+    
+    CGSize contentSize = [self intrinsicContentSizeMultipleLines];
+    [self.dynamicAnimator removeAllBehaviors];
+    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:[NSArray arrayWithArray:self.subviews]];
+    
+    UICollisionBehavior * collisionA = [[UICollisionBehavior alloc] initWithItems:[NSArray arrayWithArray:self.subviews]];
+    [collisionA addBoundaryWithIdentifier:@"bottomOfView" fromPoint:CGPointMake(0, contentSize.height) toPoint:CGPointMake(contentSize.width/2-20, contentSize.height)];
+    
+    UICollisionBehavior * collisionB = [[UICollisionBehavior alloc] initWithItems:[NSArray arrayWithArray:self.subviews]];
+    [collisionB addBoundaryWithIdentifier:@"bottomOfView" fromPoint:CGPointMake(contentSize.width/2+20, contentSize.height) toPoint:CGPointMake(contentSize.width, contentSize.height)];
+    
+    
+    UIDynamicItemBehavior *ballBehavior = [[UIDynamicItemBehavior alloc] initWithItems:[NSArray arrayWithArray:self.subviews]];
+    ballBehavior.elasticity = 0.75;
+    [self.dynamicAnimator addBehavior:ballBehavior];
+    
+    [self.dynamicAnimator addBehavior:collisionA];
+        [self.dynamicAnimator addBehavior:collisionB];
+    [self.dynamicAnimator addBehavior:gravityBehavior];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                UIPushBehavior * pushallItems = [[UIPushBehavior alloc] initWithItems:@[self.subviews[60]] mode:UIPushBehaviorModeInstantaneous];
+        [pushallItems setAngle:90 magnitude:1];
+        [self.dynamicAnimator addBehavior:pushallItems];
+    });
 
     
     
@@ -134,7 +169,7 @@
     
 
     NSLog(@"Layout multile %@",animated ? @"ANIMATED":@"NOT_ANIMATED");
-    self.clipsToBounds = YES;
+    self.clipsToBounds = NO;
     static CGFloat internalSpacingX = 5.0f;
     internalSpacingX = self.spacingX;
     
@@ -178,6 +213,7 @@
         [currentImage setFrame:CGRectMake(offcontainerPosition.x, nextPosition.y, currentImage.frame.size.width, currentImage.frame.size.height)];
         
         
+        /*
         if (animated && !self.animationsFinished){
             
             
@@ -197,10 +233,12 @@
             totalDuration+=animationDuration;
         }
         else{
-            [currentImage.layer removeAllAnimations];
+         */
+          //  [currentImage.layer removeAllAnimations];
              [currentImage setFrame:CGRectMake(nextPosition.x, nextPosition.y, currentImage.frame.size.width, currentImage.frame.size.height)];
+     
             
-        }
+       // }
       
         
   
@@ -214,6 +252,9 @@
     self.backgroundColor = [UIColor clearColor];
     
     [self invalidateIntrinsicContentSize];
+    
+    
+    
 
 }
 
@@ -223,7 +264,7 @@
 
     NSLog(@"Layout subviews");
    // [UIView animateWithDuration:1.0 animations:^{
-    [self layoutMultineInstrinsicHeight:self.animated];
+ //   [self layoutMultineInstrinsicHeight:self.animated];
   //  }];
 
    
